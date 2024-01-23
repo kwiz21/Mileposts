@@ -19,35 +19,29 @@ body {
     border-radius: 8px;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
     color: #333;
 }
 
-.game-selection {
+.game-selection, .game-area, .options, .drag-drop-area {
     margin-bottom: 20px;
 }
 
-.game-selection label, .game-selection select, .game-selection button {
-    display: block;
+select, button {
+    padding: 10px;
     width: 100%;
     margin-bottom: 10px;
-}
-
-select {
-    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 button {
-    padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
 
@@ -55,40 +49,84 @@ button:hover {
     background-color: #0056b3;
 }
 
-.game-area {
-    text-align: center;
+.mode {
+    display: none;
 }
 
-.direction-prompt {
-    margin: 20px 0;
-    font-size: 1.2em;
-}
-
-.options {
-    display: flex;
-    justify-content: space-around;
-}
-
-.option {
-    padding: 15px 20px;
+.options .option, .drag-drop-area .option {
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    margin-bottom: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
 }
 
-.option:hover {
-    background-color: #007bff;
-    color: white;
+.options .option:hover, .drag-drop-area .option:hover {
+    background-color: #f0f0f0;
 }
 
-/* Styles for correct and incorrect selections */
-.option.correct {
+.drag-drop-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.column {
+    flex-basis: 48%; /* Adjusted for alignment */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drop-area {
+    border: 2px dashed #ddd; /* More visible border */
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 400px; /* Increased height for better visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the 'Highest' and 'Lowest' labels */
+}
+
+.drop-area h3 {
+    margin: 0;
+    color: #666;
+}
+
+.drop-area .option.draggable.over {
+    border: 2px dashed #aaa;
+}
+
+.drag-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.option.draggable {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: move;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.correct {
     background-color: #28a745;
     color: white;
 }
 
-.option.incorrect {
+.incorrect {
     background-color: #dc3545;
     color: white;
+}
+
+.hidden {
+    display: none;
 }
