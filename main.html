@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstate Milepost Challenge</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS file reference -->
+</head>
+<body>
+    <div class="container">
+        <h1>Interstate Milepost Challenge</h1>
+        <div class="game-selection">
+            <label for="interstate-select">Select an Interstate:</label>
+            <select id="interstate-select">
+                <!-- Options will be dynamically loaded here -->
+            </select>
+            <button id="start-button">Start Game</button>
+        </div>
+        <div class="game-area" style="display: none;">
+            <h2 id="direction-prompt">Which is further <span id="direction"></span>?</h2>
+            <div class="options">
+                <div class="option" id="option1">
+                    <!-- Option 1 will be dynamically loaded here -->
+                </div>
+                <div class="option" id="option2">
+                    <!-- Option 2 will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- JavaScript file reference -->
+</body>
+</html>
